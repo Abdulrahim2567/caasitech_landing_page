@@ -1,9 +1,8 @@
 // Add this to your existing script.js or create a new one
-
 document.addEventListener("DOMContentLoaded", function () {
 	const hamburger = document.querySelector(".hamburgerIcon");
-	const sidebar = document.querySelector(".sidebar");
-	const overlay = document.querySelector(".overlay");
+	const sidebar = document.querySelector(".sidebar-custom");
+	const overlay = document.querySelector(".overlay-custom");
 	const body = document.querySelector("body");
 
 	let isActive = false;
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		sidebar.style.padding = "60px 0px";
 	});
 
-	const closeSidebar = document.querySelector(".close-sidebar");
+	const closeSidebar = document.querySelector(".close-sidebar-custom");
 
 	closeSidebar.addEventListener("click", function () {
 		sidebar.style.width = "0";
@@ -41,9 +40,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	sidebar.addEventListener("click", function (e) {
 		e.stopPropagation();
 	});
+	
+	let counted = false
 
 	window.addEventListener("scroll", function () {
-		const navbar = document.querySelector(".navbar");
+		const navbar = document.querySelector(".navbar-custom");
 		const scrollPosition = window.scrollY;
 		const element = document.querySelector(".counting"); // Replace '.your-element' with your actual selector
 		const position = element.getBoundingClientRect();
@@ -51,11 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		const screenHeight = window.innerHeight;
 		if (scrollPosition >= 0.8 * screenHeight) {
 			// Adjust as needed
-			navbar.classList.add("navbar-fixed");
+			navbar.classList.add("navbar-custom-fixed");
 		} else {
-			navbar.classList.remove("navbar-fixed");
+			navbar.classList.remove("navbar-custom-fixed");
 		}
-		if (position.top >= 0 && position.bottom <= window.innerHeight) {
+		if (position.top >= 0 && position.bottom <= window.innerHeight && !counted) {
 			$(".counting").each(function () {
 				var $this = $(this),
 					countTo = $this.attr("data-count");
@@ -66,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
 					},
 
 					{
-						duration: 3000,
-						easing: "linear",
+						duration: 2000,
+						easing: "linear", // Change animation easing here. Read more: https://api.jquery.com/animate/
 						step: function () {
 							$this.text(
 								Math.floor(this.countNum).toLocaleString()
@@ -80,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						},
 					}
 				);
+				counted = true;
 			});
 		}
 	});
