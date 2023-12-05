@@ -1247,6 +1247,9 @@ footer .division-2 {
 		-ms-transition: all 0.3s ease-in-out;
 		-o-transition: all 0.3s ease-in-out;
 	}
+	.division-1 .division-1-a{
+		justify-content: flex-start;
+	}
 }
 
 @media screen and (max-width: 1024px) {
