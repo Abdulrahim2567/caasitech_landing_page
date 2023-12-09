@@ -417,10 +417,12 @@
 	text-align: center;
 	width: 120px;
 }
+
 .contact {
-	width: 120px;
+	width: 160px;
 	text-align: center;
 }
+
 
 .dropdown-custom {
 	position: relative;
@@ -930,7 +932,6 @@ footer .division-1 {
 	width: fit-content;
 }
 
-
 .caasitech-academy {
 	/* border: 1px solid orange; */
 	height: fit-content;
@@ -1247,7 +1248,7 @@ footer .division-2 {
 		-ms-transition: all 0.3s ease-in-out;
 		-o-transition: all 0.3s ease-in-out;
 	}
-	.division-1 .division-1-a{
+	.division-1 .division-1-a {
 		justify-content: flex-start;
 	}
 }
