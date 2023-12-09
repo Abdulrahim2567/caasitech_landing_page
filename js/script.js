@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	sidebar.addEventListener("click", function (e) {
 		e.stopPropagation();
 	});
-	
-	let counted = false
+
+	let counted = false;
 
 	window.addEventListener("scroll", function () {
 		const navbar = document.querySelector(".navbar-custom");
@@ -56,7 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else {
 			navbar.classList.remove("navbar-custom-fixed");
 		}
-		if (position.top >= 0 && position.bottom <= window.innerHeight && !counted) {
+		if (
+			position.top >= 0 &&
+			position.bottom <= window.innerHeight &&
+			!counted
+		) {
 			$(".counting").each(function () {
 				var $this = $(this),
 					countTo = $this.attr("data-count");
@@ -93,4 +97,16 @@ $(document).ready(function () {
 		$(this).next(".sub-menu").slideToggle(400);
 		$(this).toggleClass("rotate");
 	});
+
+	$(".dropright-content a").hover(
+		function () {
+			$(this)
+				.parent()
+				.prev(".sub-dropdown")
+				.css("background-color", "rgb(5, 5, 44)");
+		},
+		function () {
+			$(this).parent().prev(".sub-dropdown").css("background-color", "");
+		}
+	);
 });
