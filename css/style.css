@@ -22,6 +22,11 @@
 	height: 100vh;
 	width: 100%;
 	display: flex;
+	background: url("../images/landing-background.webp");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
 }
 
 .overlay-custom {
@@ -30,7 +35,7 @@
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.92);
 	z-index: 999;
 }
 
@@ -80,11 +85,21 @@
 	background-color: transparent;
 	cursor: pointer;
 	margin: auto;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 
 .apply-now:hover {
 	background-color: #0d2550;
 	color: #fff;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 
 /* Add these styles to your existing CSS */
@@ -304,6 +319,11 @@
 	-moz-border-radius: 2px;
 	-ms-border-radius: 2px;
 	-o-border-radius: 2px;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 .navbar-custom-fixed {
 	position: fixed;
@@ -423,7 +443,6 @@
 	text-align: center;
 }
 
-
 .dropdown-custom {
 	position: relative;
 	display: inline-block;
@@ -508,7 +527,6 @@
 .dropright-content a:hover {
 	background-color: rgb(5, 5, 44);
 }
-
 
 .dropright:hover .dropright-content {
 	display: block;
@@ -758,12 +776,22 @@ li .image-holder {
 	width: fit-content;
 	display: flex;
 	margin: 60px auto;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 
 .learn-more-btn:hover {
 	color: #fff;
 	background-color: #0d2550;
 	outline: none;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 .bg-fixed {
 	height: 444px;
@@ -860,14 +888,23 @@ li .image-holder {
 	margin-bottom: 40px;
 }
 
+.carousel-inner {
+	max-width: 1400px;
+	margin: auto;
+}
+
+.carousel-item {
+	max-width: 100% !important;
+}
+
 .carousel-section img {
-	width: 700px !important;
-	height: 800px !important;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	-ms-border-radius: 5px;
-	-o-border-radius: 5px;
+	max-width: 100% !important;
+	height: 700px !important;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	transition: all 0.3s ease-in-out !important;
 	-webkit-transition: all 0.3s ease-in-out !important;
@@ -1065,6 +1102,173 @@ footer .division-2 {
 	-o-transition: all 0.3s ease-in-out;
 }
 
+.gallery-custom-active {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	background-color: rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+.close-icon {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	font-size: 15px;
+	color: #fff;
+	cursor: pointer;
+	padding: 7px 13px 5px;
+	border-radius: 50%;
+	align-items: center;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+}
+.close-icon:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	color: #fff;
+	transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	font-size: 10px;
+	padding: 11px 14px 10px;
+}
+
+.gallery-custom .image-preview-box {
+	flex-grow: 1;
+	flex-direction: column;
+}
+.gallery-custom .gallery-images-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
+	height: fit-content;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+.gallery-custom .gallery-images-preview-box {
+	height: 100px;
+	max-width: 1040px;
+	display: flex;
+	background-color: rgba(0, 0, 0, 0.3);
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+	overflow-x: auto;
+	margin-bottom: 10px;
+	overflow-y: hidden;
+}
+.gallery-images-box img {
+	max-height: 780px; /* Adjust as needed */
+	max-width: 100%;
+	margin: 10px;
+	border-radius: 1.5px;
+	-webkit-border-radius: 1.5px;
+	-moz-border-radius: 1.5px;
+	-ms-border-radius: 1.5px;
+	-o-border-radius: 1.5px;
+}
+
+.gallery-images-preview-box .preview-box {
+	height: 100px;
+	width: fit-content;
+	margin: 0px 5px;
+	cursor: pointer;
+	box-sizing: border-box;
+	display: flex;
+}
+
+.preview-box img {
+	height: 100%;
+	width: auto;
+	opacity: 0.2;
+}
+
+.active-image {
+	opacity: 1 !important;
+	border: 3px solid gold;
+	transition: all 0.1s ease-in-out;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+}
+
+.gallery-custom .button-box {
+	width: 15%;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-box button {
+	color: #fff;
+	background-color: transparent;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	cursor: pointer;
+	border: none;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+.button-box button:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+.button-box button:hover i {
+	font-size: 20px;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+.button-box button i {
+	display: flex;
+	font-size: 30px;
+	transition: all 0.15s ease-in-out;
+	-webkit-transition: all 0.15s ease-in-out;
+	-moz-transition: all 0.15s ease-in-out;
+	-ms-transition: all 0.15s ease-in-out;
+	-o-transition: all 0.15s ease-in-out;
+	background-color: transparent;
+	border: none;
+}
+
 @media screen and (max-width: 1600px) {
 	.logo img {
 		margin-top: -80px;
@@ -1171,9 +1375,10 @@ footer .division-2 {
 	li .image-holder {
 		min-width: 250px;
 	}
+
 	.carousel-item img {
+		max-width: 100% !important;
 		height: 700px !important;
-		width: 600px !important;
 		transition: all 0.3s ease-in-out !important;
 		-webkit-transition: all 0.3s ease-in-out !important;
 		-moz-transition: all 0.3s ease-in-out !important;
@@ -1378,8 +1583,8 @@ footer .division-2 {
 		margin: auto;
 	}
 	.carousel-item img {
+		max-width: 100% !important;
 		height: 480px !important;
-		width: 400px !important;
 		transition: all 0.3s ease-in-out !important;
 		-webkit-transition: all 0.3s ease-in-out !important;
 		-moz-transition: all 0.3s ease-in-out !important;
@@ -1545,8 +1750,8 @@ footer .division-2 {
 		font-size: 28px;
 	}
 	.carousel-item img {
+		max-width: 100% !important;
 		height: 440px !important;
-		width: 320px !important;
 		transition: all 0.3s ease-in-out !important;
 		-webkit-transition: all 0.3s ease-in-out !important;
 		-moz-transition: all 0.3s ease-in-out !important;

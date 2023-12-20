@@ -109,4 +109,145 @@ $(document).ready(function () {
 			$(this).parent().prev(".sub-dropdown").css("background-color", "");
 		}
 	);
+	$(".apply-now").click(function (e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$(".gallery-custom")
+			.addClass("gallery-custom-active")
+			.css("z-index", "99999")
+			.fadeIn()
+			.removeClass("d-none");
+		//prevent page from scrolling
+		$("body").css("overflow", "hidden");
+	});
+
+	//trigger click for apply now button and enable gallery-custom
+
+	//$(".apply-now").trigger("click");
+
+	$(".close-icon").click(function (e) {
+		e.stopPropagation();
+		$(".gallery-custom")
+			.fadeOut()
+			.removeClass("gallery-custom-active")
+			.addClass("d-none");
+		$("body").css("overflow", "auto");
+	});
+
+	let currentIndex = 0;
+	let nextIndex = 1;
+
+	let imagesSize = imagesPath.length;
+	$(".gallery-images-box img").attr("src", imagesPath[currentIndex]);
+
+	let container = $(".gallery-images-preview-box");
+	const scrollAmount = 70; // Adjust this value as needed
+
+	$(".image-next").click(function (e) {
+		e.stopPropagation();
+		nextIndex >= imagesSize && (nextIndex = 0);
+		$(".gallery-images-box img").fadeOut(function () {
+			$(this)
+				.attr("src", imagesPath[nextIndex - 1])
+				.fadeIn();
+		});
+
+		currentIndex = nextIndex;
+		nextIndex++;
+		//add active class to image corresponding to currentIndex
+		$(".gallery-images-preview-box .preview-box > img").each(function () {
+			if ($(this).attr("data-index") == currentIndex) {
+				$(this).addClass("active-image");
+			} else {
+				$(this).removeClass("active-image");
+			}
+		});
+		container.animate({ scrollLeft: "+=" + scrollAmount }, 800);
+	});
+	$(".image-prev").click(function (e) {
+		e.stopPropagation();
+		currentIndex <= 0 && (currentIndex = imagesSize);
+		$(".gallery-images-box img").fadeOut(function () {
+			$(this).attr("src", imagesPath[currentIndex]).fadeIn();
+		});
+		currentIndex--;
+		nextIndex = currentIndex + 1;
+		nextIndex >= imagesSize && (nextIndex = 0);
+		//add active class to image corresponding to currentIndex
+		$(".gallery-images-preview-box .preview-box > img").each(function () {
+			if ($(this).attr("data-index") == currentIndex) {
+				$(this).addClass("active-image");
+			} else {
+				$(this).removeClass("active-image");
+			}
+		});
+		container.animate({ scrollRight: "-=" - scrollAmount }, 800);
+	});
+
+	imagesPath.forEach((image, index) => {
+		$(".gallery-images-preview-box").append(
+			`<div class = "preview-box"><img src="${image}" class="gallery-image-preview" data-index="${index}" /></div>`
+		);
+
+		//add active class to image corresponding to currentIndex
+		$(".gallery-images-preview-box .preview-box > img")
+			.each(function () {
+				if ($(this).attr("data-index") == currentIndex) {
+					$(this).addClass("active-image");
+				} else {
+					$(this).removeClass("active-image");
+				}
+			})
+			.click(function (e) {
+				e.stopPropagation();
+				const $parentThis = $(this);
+				$(".gallery-images-box img").fadeOut(function () {
+					$(this).attr("src", $parentThis.attr("src")).fadeIn();
+				});
+				currentIndex = $(this).attr("data-index");
+				nextIndex = parseInt(currentIndex) + 1;
+				nextIndex >= imagesSize && (nextIndex = 0);
+				//add active class to image corresponding to currentIndex
+				$(".gallery-images-preview-box .preview-box > img").each(
+					function () {
+						if ($(this).attr("data-index") == currentIndex) {
+							$(this).addClass("active-image");
+						} else {
+							$(this).removeClass("active-image");
+						}
+					}
+				);
+			});
+	});
 });
+
+function updateThumbnail(startIndex) {
+	let endIndex = startIndex + 6;
+
+	if (endIndex > imagesPath.length) {
+		imagesPath.length - startIndex > 7 && (endIndex = startIndex + 5);
+		for (let i = startIndex; i < endIndex; i++) {
+			$(".gallery-images-preview-box").append(
+				`<div class = "preview-box"><img src="${imagesPath[i]}" class="gallery-image-preview" data-index="${i}" /></div>`
+			);
+			//add active class to image corresponding to currentIndex
+		}
+	}
+}
+
+const imagesPath = [
+	"/images/gallery/1.png",
+	"/images/gallery/2.png",
+	"/images/gallery/3.png",
+	"/images/gallery/4.png",
+	"/images/gallery/5.png",
+	"/images/gallery/6.jpg",
+	"/images/gallery/cdba-276x276.png",
+	"/images/gallery/cnet-276x276.png",
+	"/images/gallery/prog-276x276.png",
+	"/images/gallery/ux-276x276.png",
+	"/images/gallery/hc3.jpg",
+	"/images/gallery/hc4-768x1024.jpg",
+	"/images/gallery/hc6-1024x768.jpg",
+];
