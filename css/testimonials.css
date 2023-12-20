@@ -72,12 +72,21 @@ header .links {
 }
 
 .testimonials-card-container {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	margin-bottom: 50px;
-	/*card shadow */
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+    /*cardshadow*/box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 
 .testimonial-card {
@@ -155,6 +164,7 @@ blockquote::before {
 	font-weight: 400;
 	font-style: italic;
     display: flex;
+    padding: 0px 10px 0px 0px;
 }
 
 .name {
@@ -204,6 +214,7 @@ blockquote::before {
         -moz-transition: all 0.3s ease-in-out;
         -ms-transition: all 0.3s ease-in-out;
         -o-transition: all 0.3s ease-in-out;
+        margin: 0px;
 }
     .description{
         justify-content: center;
@@ -212,6 +223,7 @@ blockquote::before {
         justify-content: center;
         text-align: center;
         word-wrap: break-word;
+        padding: 0px 10px;
     }
     .name{
         justify-content: right;
